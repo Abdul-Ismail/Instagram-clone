@@ -6,6 +6,10 @@
 //  Copyright © 2017 Abdulaziz Ismail. All rights reserved.
 //
 
+//appdelegate, typcially used for global on startup configurations 
+//called first when the app runs
+
+
 import UIKit
 
 @UIApplicationMain
@@ -15,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        //change color of tab bar's item
+        UITabBar.appearance().tintColor = UIColor.black
         return true
     }
 
