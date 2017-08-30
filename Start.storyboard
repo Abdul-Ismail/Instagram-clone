@@ -52,6 +52,9 @@
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" white="1" alpha="0.84091659330985913" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="O3q-5r-2uY" kind="presentation" id="JHL-Ee-4cj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -93,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Sz-ISl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="66.11694152923539"/>
+            <point key="canvasLocation" x="166" y="-313"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bmm-GU-Jhc">
@@ -146,6 +149,9 @@
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" white="1" alpha="0.84091659330000001" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="O3q-5r-2uY" kind="presentation" id="BKG-9D-1Rf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -185,10 +191,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZu-Q1-jEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384.80000000000001" y="65.217391304347828"/>
+            <point key="canvasLocation" x="166" y="438"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="00v-c8-zow">
+            <objects>
+                <viewController id="y7o-b1-05g" customClass="DiscoverViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UeP-Qc-xeG"/>
+                        <viewControllerLayoutGuide type="bottom" id="62D-YU-7cU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NbR-sQ-KHk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" selectedImage="Search_Selected" id="dAH-qN-bt2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWx-hA-CqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="-641"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="aku-oD-i7j">
+            <objects>
+                <viewController id="VrV-cp-xu5" customClass="CameraViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ac-oB-LVn"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcf-ON-aEs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zrN-nv-Iz8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="Photo" id="aAI-6m-8A9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="771-2v-hjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="66"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="ZQq-uT-BKC">
+            <objects>
+                <viewController id="Eoy-vB-LbO" customClass="ActivityViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KEU-uD-tx3"/>
+                        <viewControllerLayoutGuide type="bottom" id="lUf-sq-Bfa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A58-wC-4EG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Activity" image="Activity" selectedImage="Activity_Selected" id="QwZ-vk-MUV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gr0-yN-CCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="746"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="fjS-su-zhX">
+            <objects>
+                <viewController id="XKJ-Ib-Y9L" customClass="ProfileViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pHi-1F-Nfy"/>
+                        <viewControllerLayoutGuide type="bottom" id="RZ8-eB-c2d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CMG-iw-mOi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="9ao-mA-Tnm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5v-EK-izs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="1422"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Z0N-nj-e1P">
+            <objects>
+                <viewController id="p8l-RD-9jj" customClass="HomeViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wrB-Wl-MVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="LNv-jb-Egd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yip-jv-vBX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home_Selected" id="yeb-5z-00s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdC-kS-Mu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="-1325"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Puv-99-wGv">
+            <objects>
+                <tabBarController id="O3q-5r-2uY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TZ3-V4-ssU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="p8l-RD-9jj" kind="relationship" relationship="viewControllers" id="G86-Mm-0TA"/>
+                        <segue destination="y7o-b1-05g" kind="relationship" relationship="viewControllers" id="IkG-3r-umy"/>
+                        <segue destination="VrV-cp-xu5" kind="relationship" relationship="viewControllers" id="8z3-gc-FX7"/>
+                        <segue destination="Eoy-vB-LbO" kind="relationship" relationship="viewControllers" id="vzw-ea-Z1G"/>
+                        <segue destination="XKJ-Ib-Y9L" kind="relationship" relationship="viewControllers" id="mZA-qp-n0U"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ox-Pr-9yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="65"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Activity" width="22" height="20"/>
+        <image name="Activity_Selected" width="22" height="20"/>
         <image name="BlankPhoto" width="500" height="410"/>
+        <image name="Home" width="21" height="23"/>
+        <image name="Home_Selected" width="21" height="23"/>
+        <image name="Photo" width="22" height="23"/>
+        <image name="Profile" width="20" height="21"/>
+        <image name="Profile_Selected" width="20" height="21"/>
+        <image name="Search" width="23" height="22"/>
+        <image name="Search_Selected" width="23" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BKG-9D-1Rf"/>
+    </inferredMetricsTieBreakers>
 </document>
