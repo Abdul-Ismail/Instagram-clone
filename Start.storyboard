@@ -155,7 +155,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signUpBtn_TouchUpInside:" destination="dBB-tJ-nZX" eventType="touchUpInside" id="bmy-um-lWj"/>
-                                            <segue destination="z64-oS-xpa" kind="presentation" id="BKG-9D-1Rf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -216,7 +215,4 @@
     <resources>
         <image name="BlankPhoto" width="500" height="410"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BKG-9D-1Rf"/>
-    </inferredMetricsTieBreakers>
 </document>
