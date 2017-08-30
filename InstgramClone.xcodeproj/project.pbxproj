@@ -78,8 +78,18 @@
 		7B413F861F537FA7001A872E /* InstgramClone */ = {
 			isa = PBXGroup;
 			children = (
-				7B413F871F537FA7001A872E /* AppDelegate.swift */,
-				7B413F9B1F538C37001A872E /* SigninViewController.swift */,
+				7BF4B57C1F56644100F60989 /* Storyboards */,
+				7BF4B57D1F56646C00F60989 /* ViewController */,
+				7B413F8E1F537FA7001A872E /* Assets.xcassets */,
+				7B413F901F537FA7001A872E /* LaunchScreen.storyboard */,
+				7B413F931F537FA7001A872E /* Info.plist */,
+			);
+			path = InstgramClone;
+			sourceTree = "<group>";
+		};
+		7BF4B57C1F56644100F60989 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				7B413F991F538423001A872E /* Start.storyboard */,
 				7BF4B56E1F56523900F60989 /* Main.storyboard */,
 				7BF4B57A1F5655F400F60989 /* Profile.storyboard */,
@@ -87,17 +97,23 @@
 				7BF4B5741F56557B00F60989 /* Camera.storyboard */,
 				7BF4B5721F56554300F60989 /* Discover.storyboard */,
 				7BF4B5701F5654C400F60989 /* Home.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		7BF4B57D1F56646C00F60989 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B413F9B1F538C37001A872E /* SigninViewController.swift */,
 				7B1B600D1F5648DA001381CF /* HomeViewController.swift */,
+				7B413F871F537FA7001A872E /* AppDelegate.swift */,
 				7B1B60131F564948001381CF /* ActivityViewController.swift */,
 				7B1B60111F56491E001381CF /* CameraViewController.swift */,
 				7B1B60151F56495C001381CF /* ProfileViewController.swift */,
 				7B1B600F1F564908001381CF /* DiscoverViewController.swift */,
 				7B413F9D1F539095001A872E /* SignUpViewController.swift */,
-				7B413F8E1F537FA7001A872E /* Assets.xcassets */,
-				7B413F901F537FA7001A872E /* LaunchScreen.storyboard */,
-				7B413F931F537FA7001A872E /* Info.plist */,
 			);
-			path = InstgramClone;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

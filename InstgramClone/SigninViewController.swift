@@ -10,26 +10,33 @@ import UIKit
 
 class SigninViewController: UIViewController {
 
+    @IBOutlet weak var emailTextFiel: UITextField!
+    
+    @IBOutlet weak var passwordTextField:UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextFiel.backgroundColor = UIColor.clear
+        emailTextFiel.tintColor = UIColor.white
+        emailTextFiel.textColor = UIColor.white
+        emailTextFiel.attributedPlaceholder = NSAttributedString(string: emailTextFiel.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerEmail = CALayer() //cylayer provides us with a low level grpahic animation
+        bottomLayerEmail.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerEmail.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        emailTextFiel.layer.addSublayer(bottomLayerEmail)
+        
+        passwordTextField.backgroundColor = UIColor.clear
+        passwordTextField.tintColor = UIColor.white
+        passwordTextField.textColor = UIColor.white
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerPassword = CALayer() //cylayer provides us with a low level grpahic animation
+        bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        passwordTextField.layer.addSublayer(bottomLayerPassword)
+        
+        
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -93,6 +93,10 @@
                             <constraint firstAttribute="trailing" secondItem="ks2-8D-xMA" secondAttribute="trailing" constant="20" id="pQJ-O1-6Bi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextFiel" destination="vk0-EE-Bx8" id="XhO-ps-plR"/>
+                        <outlet property="passwordTextField" destination="hz8-KQ-R3y" id="RnH-ur-iAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Sz-ISl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,6 +192,12 @@
                             <constraint firstItem="GVx-LT-Azo" firstAttribute="top" secondItem="FDb-YM-n50" secondAttribute="bottom" id="zch-p6-B4g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ltg-it-Bff" id="kMh-SA-XcS"/>
+                        <outlet property="passwordTextField" destination="Ni5-e7-bb9" id="kuC-gw-wzV"/>
+                        <outlet property="profileImage" destination="mBe-vF-6Dr" id="9re-dZ-mbY"/>
+                        <outlet property="usernameTextField" destination="1MN-jA-tDz" id="Cqu-ha-XL2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZu-Q1-jEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
