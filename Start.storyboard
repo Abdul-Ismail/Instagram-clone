@@ -53,7 +53,7 @@
                                             <color key="titleColor" white="1" alpha="0.84091659330985913" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="z64-oS-xpa" kind="presentation" id="JHL-Ee-4cj"/>
+                                            <action selector="signInButton_TouchUpInside:" destination="ymP-0h-Hnw" eventType="touchUpInside" id="qyC-dY-V26"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,6 +96,8 @@
                     <connections>
                         <outlet property="emailTextFiel" destination="vk0-EE-Bx8" id="XhO-ps-plR"/>
                         <outlet property="passwordTextField" destination="hz8-KQ-R3y" id="RnH-ur-iAE"/>
+                        <outlet property="signInButton" destination="m1D-rb-jlD" id="xna-pM-R94"/>
+                        <segue destination="z64-oS-xpa" kind="presentation" identifier="signInToTabbarVC" id="hG1-ZD-H3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Sz-ISl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,6 +200,7 @@
                         <outlet property="profileImage" destination="mBe-vF-6Dr" id="9re-dZ-mbY"/>
                         <outlet property="signUpButton" destination="kIs-89-SRM" id="WuF-RP-GT6"/>
                         <outlet property="usernameTextField" destination="1MN-jA-tDz" id="Cqu-ha-XL2"/>
+                        <segue destination="z64-oS-xpa" kind="presentation" identifier="signUpToTabbarVC" id="1Rw-Gc-2ph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZu-Q1-jEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,4 +219,7 @@
     <resources>
         <image name="BlankPhoto" width="500" height="410"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Rw-Gc-2ph"/>
+    </inferredMetricsTieBreakers>
 </document>

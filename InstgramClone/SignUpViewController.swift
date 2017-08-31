@@ -126,6 +126,7 @@ class SignUpViewController: UIViewController {
         let userReference = ref.child("users")
         let newUserReference = userReference.child(uid)
         newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+        self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
     }
 }
 
