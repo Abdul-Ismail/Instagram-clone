@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var signUpButton: UIButton!
     
     var selectedImage: UIImage?
 
@@ -55,10 +56,31 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
+
+        handleTextFieldMethod()
+        
         
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func handleTextFieldMethod(){
+        usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+
+    }
+    
+    func textFieldDidChange(){
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+            signUpButton.isEnabled = false
+            return
+            
+        }
+        signUpButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        signUpButton.isEnabled = true
     }
     
     //to click the picture for profile picture when user clicks to change profile picture
@@ -87,22 +109,23 @@ class SignUpViewController: UIViewController {
             if error != nil {
                 return
             }
-            
             let profileImageUrl = metadata?.downloadURL()?.absoluteString
-         
+            self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
             
-            
-            let ref = Database.database().reference() //returns reference of where the database is
-            let userReference = ref.child("users")
-            let uid = user?.uid
-            let newUserReference = userReference.child(uid!)
-            newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+    
             })
             }
             
         })
         
         
+    }
+    
+    func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String){
+        let ref = Database.database().reference() //returns reference of where the database is
+        let userReference = ref.child("users")
+        let newUserReference = userReference.child(uid)
+        newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
     }
 }
 
