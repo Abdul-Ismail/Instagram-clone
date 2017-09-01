@@ -43,6 +43,12 @@ class SigninViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+        }
+    }
+    
     func handleTextFieldMethod(){
         passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
         emailTextFiel.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)

@@ -13,7 +13,7 @@
         <!--Signin View Controller-->
         <scene sceneID="rB8-6C-8qs">
             <objects>
-                <viewController id="ymP-0h-Hnw" customClass="SigninViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SigninViewController" id="ymP-0h-Hnw" customClass="SigninViewController" customModule="InstgramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ogd-cs-Sjj"/>
                         <viewControllerLayoutGuide type="bottom" id="Xpm-qb-a8L"/>
@@ -220,6 +220,6 @@
         <image name="BlankPhoto" width="500" height="410"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Rw-Gc-2ph"/>
+        <segue reference="hG1-ZD-H3p"/>
     </inferredMetricsTieBreakers>
 </document>
