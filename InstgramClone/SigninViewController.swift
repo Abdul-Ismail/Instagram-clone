@@ -35,6 +35,8 @@ class SigninViewController: UIViewController {
         bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
+        signInButton.isEnabled = false
+        signInButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
         
         handleTextFieldMethod()
         
@@ -68,12 +70,14 @@ class SigninViewController: UIViewController {
 
 
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextFiel.text!, password: passwordTextField.text!) { (user, error) in
-            if error != nil{
-              print(error!.localizedDescription)
-                return
-            }
-            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
-        }
-    }
+        AuthService.signIn(email: emailTextFiel.text!, password: passwordTextField.text!, onSuccess: {
+              self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+        }, onError: { error in
+            print(error!)
+            
+        })
+      }
+    
+    
+    
 }

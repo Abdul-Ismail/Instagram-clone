@@ -56,6 +56,10 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
+        signUpButton.isEnabled = false
+         signUpButton.setTitleColor(UIColor.lightText, for: UIControlState.normal)
+        
+
 
         handleTextFieldMethod()
         
@@ -96,39 +100,19 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUpBtn_TouchUpInside(_ sender: Any) {
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion:  { (user: User?, error: Error?) in
-            if error != nil{
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let uid = user?.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://instagramclone879.appspot.com").child("profile_image").child(uid!)
-            if let profileImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImage, 0.1){
-                storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
-            if error != nil {
-                return
-            }
-            let profileImageUrl = metadata?.downloadURL()?.absoluteString
-            self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
-            
-    
-            })
-            }
-            
-        })
         
-        
-    }
-    
-    func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String){
-        let ref = Database.database().reference() //returns reference of where the database is
-        let userReference = ref.child("users")
-        let newUserReference = userReference.child(uid)
-        newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
-        self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
+
+        if let profileImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImage, 0.1){
+                AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                    self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
+                }, onError: { (errorString) in
+                    print(errorString!)
+                })
+        }
     }
 }
+
+
 
 
 
