@@ -50,9 +50,9 @@ class SigninViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-      //  if Auth.auth().currentUser != nil {
-         //   self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
-       // }
+            if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            }
     }
     
     func handleTextFieldMethod(){
