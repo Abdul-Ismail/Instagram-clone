@@ -14,6 +14,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var removeButton: UIBarButtonItem!
     var selectedImage: UIImage? 
 
     override func viewDidLoad() {
@@ -26,6 +27,28 @@ class CameraViewController: UIViewController {
 
 
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handlePost()
+    }
+    
+    //disable share button until there is a photo picked
+    func handlePost(){
+        if selectedImage != nil{
+            self.shareButton.isEnabled = true
+            self.removeButton.isEnabled = true
+            self.shareButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        } else {
+            self.shareButton.isEnabled = false
+            self.removeButton.isEnabled = false
+            self.shareButton.backgroundColor = UIColor.lightGray
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     func handleSelectPhoto(){
@@ -54,20 +77,34 @@ class CameraViewController: UIViewController {
         }
     }
 
+    @IBAction func Remove_TouchUpInside(_ sender: Any) {
+        self.clean()
+        self.handlePost()
+    }
+    
+    
     func sendDataToDatabase(photoUrl: String){
         let ref = Database.database().reference()
         let postsReference = ref.child("posts")
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId)
-        newPostReference.setValue(["photoUrl": photoUrl], withCompletionBlock: {
+        newPostReference.setValue(["photoUrl": photoUrl, "caption": captionTextView.text!], withCompletionBlock: {
             (error, ref) in
             if error != nil{
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
             ProgressHUD.showSuccess("success")
+            self.clean()
+            self.tabBarController?.selectedIndex = 0
         })
         
+    }
+    
+    func clean() {
+        self.captionTextView.text = ""
+        self.photo.image = UIImage(named: "BlankPhoto")
+        self.selectedImage = nil
     }
 
     
