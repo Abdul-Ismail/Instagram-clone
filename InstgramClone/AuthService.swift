@@ -19,8 +19,9 @@ class AuthService{
                 onError(error!.localizedDescription)
                 return
             }
+             onSuccess()
         })
-            onSuccess()
+        
        }
     
     static func signUp(username: String, email: String, password: String, imageData: Data, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {

@@ -45,10 +45,14 @@ class SigninViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
-        }
+      //  if Auth.auth().currentUser != nil {
+         //   self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+       // }
     }
     
     func handleTextFieldMethod(){
@@ -70,10 +74,13 @@ class SigninViewController: UIViewController {
 
 
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
+        view.endEditing(true)
+        ProgressHUD.show("waiting...", interaction: false)
         AuthService.signIn(email: emailTextFiel.text!, password: passwordTextField.text!, onSuccess: {
-              self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            ProgressHUD.showSuccess("welcome")
         }, onError: { error in
-            print(error!)
+            ProgressHUD.showError(error!)
             
         })
       }
