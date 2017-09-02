@@ -96,7 +96,6 @@ class SignUpViewController: UIViewController {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
-        print("DONE")
     }
 
     @IBAction func dismiss_onClick(_ sender: Any) {
